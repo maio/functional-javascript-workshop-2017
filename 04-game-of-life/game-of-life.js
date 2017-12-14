@@ -38,10 +38,9 @@ function shouldBeAlive(isAlive, neighbours) {
 // Return next generation given current one.
 function nextGeneration(current) {
     // 1. Map all living cells from current generation to their neighbours (may/should contain duplicates)
-    var allNeighbours = _.flatMap(current, getNeighbours);
     // 2. Find how many neighbours from step #1 point to same location.
-    var neighboursCount = _.groupBy(allNeighbours);
     // 3. Apply rules (shouldBeAlive) to all (deduplicated) positions from #3 to generate new generation.
-    var isAlive = cell => current.indexOf(cell) !== -1;
-    return Object.keys(neighboursCount).filter(cell => shouldBeAlive(isAlive(cell), neighboursCount[cell].length));
+
+    // NOOP implementation
+    return current;
 }
